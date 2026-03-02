@@ -1,0 +1,120 @@
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+
+:lang(zh) {
+  quotes: '「' '」';
+}
+
+:lang(zh-CN) {
+  quotes: '“' '”';
+}
+
+body {
+  @apply antialiased text-base text-gray-900 dark:text-gray-300 dark:bg-gray-950;
+}
+
+.section {
+  @apply mt-8;
+}
+
+.section-title {
+  @apply text-2xl font-medium;
+}
+
+a.link {
+  @apply text-blue-700 dark:text-blue-500  decoration-1;
+
+  &:hover {
+    @apply underline underline-offset-4 decoration-1;
+  }
+
+  /* &:visited {
+    @apply text-purple-800 dark:text-purple-400;
+  } */
+}
+
+.article {
+  @apply mt-4 text-base lg:text-lg leading-relaxed;
+
+  h1 {
+    @apply text-[1.875em] font-bold leading-10;
+  }
+
+  h2 {
+    @apply text-[1.5em] font-medium mt-8 leading-9;
+  }
+
+  h3 {
+    @apply text-[1.25em] font-medium mt-8 leading-8;
+  }
+
+  p {
+    @apply mt-6;
+  }
+
+  a {
+    @apply text-blue-700 dark:text-blue-500 hover:underline hover:underline-offset-4 hover:decoration-1;
+  }
+
+  ul,
+  ol {
+    padding: 0 1em;
+    @apply mt-4 pl-[1.5em];
+  }
+
+  li {
+    @apply mt-2;
+  }
+
+  ul li {
+    list-style: disc;
+  }
+
+  ol li {
+    list-style: decimal;
+  }
+
+  pre {
+    @apply mt-6 p-4 bg-gray-100 dark:bg-gray-800 rounded text-[.75em] overflow-x-auto;
+  }
+
+  hr {
+    @apply mt-8 w-4/5 mx-auto;
+  }
+
+  blockquote {
+    @apply mt-8 pl-4 border-l-4 border-gray-300 dark:border-gray-700 font-serif;
+  }
+
+  table {
+    @apply mt-6 border-t;
+    tr {
+      @apply border-b;
+    }
+
+    td,
+    th {
+      @apply py-1 px-2 text-[.875em];
+    }
+  }
+}
+
+.writings-table {
+  @apply border-t border-neutral-300;
+  td,
+  th {
+    @apply py-2 px-2 border-b border-neutral-300 dark:border-neutral-700;
+  }
+
+  th {
+    @apply text-left text-sm font-medium;
+  }
+
+  .date {
+    @apply w-[140px] text-xs text-neutral-500 dark:text-neutral-600;
+  }
+}
+
+.post-list .post-meta {
+  @apply text-xs text-gray-500 dark:text-gray-600;
+}

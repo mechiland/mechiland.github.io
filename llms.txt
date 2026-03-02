@@ -1,0 +1,11 @@
+# migaoshuo.com
+
+Site: https://migaoshuo.com
+Language: zh-CN
+Description: 这里是米高说，写下对产品、技术、创业、生活的观察和感悟。
+
+## Key URLs
+- https://migaoshuo.com/
+- https://migaoshuo.com/writings/
+- https://migaoshuo.com/about
+- https://migaoshuo.com/now
