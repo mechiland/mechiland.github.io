@@ -1,6 +1,46 @@
-<header class="py-4">
-  <a href="/" class="flex items-center gap-2">
-    <img src="/assets/images/logo.png" class="size-7 rounded-md" />
-    <span class="text-sm font-bold text-neutral-600">米高说</span>
-  </a>
-</header>
+<aside class="md:w-[200px] md:shrink-0 -mx-4 md:mx-0 md:px-0">
+  <div class="lg:sticky lg:top-20">
+
+    <div
+      class="mb-2 px-4 md:px-0 md:mb-20 flex flex-col md:flex-row items-start">
+      <a href="/" class="flex items-center gap-3">
+        <img src="/assets/images/logo.png" alt="{{ site.title | escape }}"
+          class="size-9 rounded-md" />
+      </a>
+      <h1
+        class="text-lg font-bold tracking-widest text-gray-900 dark:text-gray-100 mt-10 md:hidden">
+        <a href="/">{{ site.title | escape }}</a>
+      </h1>
+    </div>
+
+    {%- assign nav_items = "简介|/;文章|/writings/;现在|/now;关于|/about" | split: ";"
+    -%}
+    <nav
+      class="flex flex-row md:flex-col items-start relative md:top-[-7px] overflow-x-auto px-4 md:px-0 pb-4 md:pb-0 md:overflow-visible md:relative md:left-[-6px]">
+      <div class="flex flex-row md:flex-col space-x-4 md:space-x-0 pr-10">
+        {%- for item in nav_items -%}
+        {%- assign parts = item | split: "|" -%}
+        {%- assign item_title = parts[0] -%}
+        {%- assign item_url = parts[1] -%}
+        {%- assign is_active = false -%}
+        {%- if page.url == item_url -%}
+        {%- assign is_active = true -%}
+        {%- elsif item_url == "/writings/" and page.url contains "/writings" -%}
+        {%- assign is_active = true -%}
+        {%- elsif item_url == "/writings/" and page.layout == "post" -%}
+        {%- assign is_active = true -%}
+        {%- endif -%}
+        <div
+          class="flex flex-col-reverse md:flex-row text-sm py-1 items-center">
+          <div
+            class="md:relative rounded-full md:mr-2 md:left-px w-[4px] h-[4px] mt-1 md:mt-0 transition-transform {% if is_active %}scale-125 bg-emerald-500 dark:bg-emerald-400{% else %}scale-0{% endif %}"></div>
+          <a href="{{ item_url | relative_url }}"
+            class="transition-opacity {% if is_active %}text-emerald-600 dark:text-emerald-400{% else %}hover:opacity-60 text-gray-700 dark:text-gray-400{% endif %}">{{
+            item_title }}</a>
+        </div>
+        {%- endfor -%}
+      </div>
+    </nav>
+
+  </div>
+</aside>

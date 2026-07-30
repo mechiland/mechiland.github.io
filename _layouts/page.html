@@ -1,12 +1,15 @@
 ---
 layout: base
 ---
-<div class="article">
-  <article class="section">
+<div class="w-full md:w-9/12">
+  <article>
 
-    <h1 class="text-2xl font-bold text-gray-800">{{ page.title | escape }}</h1>
+    {%- if page.show_title != false %}
+    <h1 class="text-xl font-bold leading-snug text-gray-900 dark:text-gray-100">
+      {{ page.title | escape }}</h1>
+    {%- endif %}
 
-    <div className="section prose prose-neutral max-w-none">
+    <div class="article">
       {{ content }}
     </div>
 

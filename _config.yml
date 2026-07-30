@@ -21,7 +21,7 @@
 title: 米高说
 email: mechiland@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  这里是米高说，写下对产品、技术、创业、生活的观察和感悟。
+  产品、技术、创业、生活的观察和感悟 - 陈金洲
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://migaoshuo.com" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: /writings/:title

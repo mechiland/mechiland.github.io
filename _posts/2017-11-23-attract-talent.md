@@ -93,13 +93,7 @@ Meaningful, Challenge Work有意义、高挑战的工作****
 
 
 
-1. [做真正的工作](http://mp.weixin.qq.com/s?__biz=MzA4ODAxODEwNA==&mid=2458638161&idx=1&sn=0401fdf22aa622d16746b06467ea9bd7&chksm=874fea86b03863908c9fca4b4bd8db2e66f873da9e8f36ef665805a977fbd4269d54a1219881&scene=21#wechat_redirect)
+1. [做真正的工作](/writings/real-work)
 
 2. 《驱动力》by Dan Pink
-
-
-
-![](https://storage.migaoshuo.com/z7so1fzyc7xukb4dclrjzcokydax)
-
-
 

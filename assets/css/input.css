@@ -1,6 +1,10 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 
+@theme {
+  --font-serif: Georgia, 'Noto Serif SC', 'Songti SC', 'SimSun', serif;
+}
+
 :lang(zh) {
   quotes: '「' '」';
 }
@@ -10,50 +14,56 @@
 }
 
 body {
-  @apply antialiased text-base text-gray-900 dark:text-gray-300 dark:bg-gray-950;
-}
-
-.section {
-  @apply mt-8;
-}
-
-.section-title {
-  @apply text-2xl font-medium;
+  @apply antialiased text-base text-gray-900 dark:text-gray-200 bg-white dark:bg-gray-950;
 }
 
 a.link {
-  @apply text-blue-700 dark:text-blue-500  decoration-1;
+  @apply text-emerald-600 dark:text-emerald-400 decoration-1 underline-offset-2;
 
   &:hover {
-    @apply underline underline-offset-4 decoration-1;
+    @apply underline;
   }
-
-  /* &:visited {
-    @apply text-purple-800 dark:text-purple-400;
-  } */
 }
 
+/* Article prose: serif body, small bold sans-serif headings, green links */
 .article {
-  @apply mt-4 text-base lg:text-lg leading-relaxed;
+  @apply text-base lg:text-base leading-[1.7];
+
+  p,
+  ul,
+  ol,
+  blockquote {
+    @apply font-serif dark:text-gray-300;
+  }
 
   h1 {
-    @apply text-[1.875em] font-bold leading-10;
+    @apply text-lg font-bold mt-10 leading-snug text-gray-900 dark:text-gray-100;
   }
 
   h2 {
-    @apply text-[1.5em] font-medium mt-8 leading-9;
+    @apply text-[1.0625em] font-bold mt-10 leading-snug text-gray-900 dark:text-gray-100;
   }
 
   h3 {
-    @apply text-[1.25em] font-medium mt-8 leading-8;
+    @apply text-[1em] font-bold mt-8 leading-snug text-gray-900 dark:text-gray-100;
   }
 
   p {
     @apply mt-6;
   }
 
+  h1 + p,
+  h2 + p,
+  h3 + p {
+    @apply mt-4;
+  }
+
   a {
-    @apply text-blue-700 dark:text-blue-500 hover:underline hover:underline-offset-4 hover:decoration-1;
+    @apply text-emerald-600 dark:text-emerald-400 underline underline-offset-2 decoration-1 decoration-emerald-600/30 dark:decoration-emerald-400/30;
+
+    &:hover {
+      @apply decoration-emerald-600 dark:decoration-emerald-400;
+    }
   }
 
   ul,
@@ -74,22 +84,34 @@ a.link {
     list-style: decimal;
   }
 
+  code {
+    @apply text-pink-600 dark:text-pink-400 text-[.875em];
+  }
+
   pre {
-    @apply mt-6 p-4 bg-gray-100 dark:bg-gray-800 rounded text-[.75em] overflow-x-auto;
+    @apply mt-6 p-4 bg-[#fafafa] dark:bg-[#0E121A] border border-gray-200 dark:border-gray-800 rounded text-[.75em] overflow-x-auto;
+
+    code {
+      @apply text-inherit;
+    }
   }
 
   hr {
-    @apply mt-8 w-4/5 mx-auto;
+    @apply mt-10 border-gray-100 dark:border-zinc-800;
   }
 
   blockquote {
-    @apply mt-8 pl-4 border-l-4 border-gray-300 dark:border-gray-700 font-serif;
+    @apply mt-8 pl-4 border-l-2 border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400;
+  }
+
+  img {
+    @apply mt-6 rounded;
   }
 
   table {
-    @apply mt-6 border-t;
+    @apply mt-6 border-t border-gray-200 dark:border-gray-800;
     tr {
-      @apply border-b;
+      @apply border-b border-gray-100 dark:border-gray-800;
     }
 
     td,
@@ -97,24 +119,4 @@ a.link {
       @apply py-1 px-2 text-[.875em];
     }
   }
-}
-
-.writings-table {
-  @apply border-t border-neutral-300;
-  td,
-  th {
-    @apply py-2 px-2 border-b border-neutral-300 dark:border-neutral-700;
-  }
-
-  th {
-    @apply text-left text-sm font-medium;
-  }
-
-  .date {
-    @apply w-[140px] text-xs text-neutral-500 dark:text-neutral-600;
-  }
-}
-
-.post-list .post-meta {
-  @apply text-xs text-gray-500 dark:text-gray-600;
 }

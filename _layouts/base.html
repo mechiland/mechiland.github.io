@@ -5,23 +5,26 @@
 
   <body>
 
-    <div class="px-8">
-      <div class="w-full sm:w-[37rem] lg:w-[42rem] mx-auto">
+    <div class="max-w-5xl mb-40 flex flex-col md:flex-row mx-4 mt-8 md:mt-20 lg:mt-32 lg:mx-auto">
 
-        {%- include header.html -%}
+      {%- include header.html -%}
 
-        <main class="page-content" aria-label="Content">
-          <div class="wrapper">
-            {{ content }}
-          </div>
-        </main>
+      <main class="flex-auto min-w-0 mt-6 md:mt-0 flex flex-col" aria-label="Content">
+        <h1 class="mb-20 text-lg font-bold tracking-widest text-gray-900 dark:text-gray-100 hidden md:block">
+          <a href="/">{{ site.title | escape }}</a>
+        </h1>
+
+        <div class="flex-auto">
+          {{ content }}
+        </div>
 
         {%- include footer.html -%}
 
-        {%- include sub-footer.html -%}
+      </main>
 
-      </div>
     </div>
+
+    {%- include sub-footer.html -%}
 
   </body>
 
