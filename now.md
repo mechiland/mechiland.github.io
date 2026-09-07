@@ -9,7 +9,7 @@ permalink: /now
 
 ## Eveland
 
-正在构建新的开源产品： [Eveland](https://eveland.ai) 网站可见，产品预计下周开源发布。这是最近两个月在做的事情。它用来回答一个问题：当团队里，Agent 数量多于人类数量时，我们该如何管理、监控这些 Agent? Eveland 是我的答案，也是为那一天的到来做的准备。
+正在构建新的开源产品： [Eveland](https://eveland.ai) 网站可见，产品已经[开源](https://github.com/evelandhq/eveland)。这是最近两个月在做的事情。它用来回答一个问题：当团队里，Agent 数量多于人类数量时，我们该如何管理、监控这些 Agent? Eveland 是我的答案，也是为那一天的到来做的准备。
 
 ## 群历
 
