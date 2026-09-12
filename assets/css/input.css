@@ -89,7 +89,7 @@ a.link {
   }
 
   pre {
-    @apply mt-6 p-4 bg-[#fafafa] dark:bg-[#0E121A] border border-gray-200 dark:border-gray-800 rounded text-[.75em] overflow-x-auto;
+    @apply mt-6 p-4 bg-[#fafafa] dark:bg-[#0E121A] border border-gray-200 dark:border-gray-800 rounded overflow-x-auto;
 
     code {
       @apply text-inherit;

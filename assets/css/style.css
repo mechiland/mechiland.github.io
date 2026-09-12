@@ -809,7 +809,6 @@ a.link {
     border-color: var(--color-gray-200);
     background-color: #fafafa;
     padding: calc(var(--spacing) * 4);
-    font-size: .75em;
     @media (prefers-color-scheme: dark) {
       border-color: var(--color-gray-800);
     }
