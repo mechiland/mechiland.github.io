@@ -1,6 +1,8 @@
-
-<footer
-  class="w-full md:w-9/12 mt-24 pt-6 text-sm text-gray-400 dark:text-gray-500 flex flex-col sm:flex-row gap-2 justify-between items-start sm:items-center">
-  <div>© {{ site.time | date: '%Y' }} {{ site.title | escape }}</div>
-  <div>♥ 愿你在这个时代内心安宁，主宰自己的生命</div>
+<footer class="mt-20 pt-7 border-t border-[var(--hairline)] text-[13px] text-[var(--muted)] flex flex-col sm:flex-row gap-2 justify-between items-start sm:items-center">
+  <div class="flex items-center gap-2.5 tabular-nums">
+    <span>© {{ site.time | date: '%Y' }} {{ site.title | escape }}</span>
+    <span aria-hidden="true" class="text-[var(--faint)]">·</span>
+    <a href="{{ '/feed.xml' | relative_url }}" class="site-footer-links hover:text-[var(--ink)] transition-colors">RSS</a>
+  </div>
+  <div>愿你在这个时代内心安宁，主宰自己的生命</div>
 </footer>

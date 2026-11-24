@@ -1,0 +1,52 @@
+<div
+  id="aa-popover"
+  class="aa-popover"
+  role="dialog"
+  aria-label="阅读外观设置"
+  aria-hidden="true">
+
+  <div class="space-y-3.5">
+    <div>
+      <div class="aa-row-label mb-1.5">外观主题</div>
+      <div class="aa-seg grid-cols-3" role="radiogroup" aria-label="主题">
+        <button type="button" class="aa-seg-btn is-active" data-set-theme="auto" role="radio" aria-checked="true">
+          自适应
+        </button>
+        <button type="button" class="aa-seg-btn" data-set-theme="light" role="radio" aria-checked="false">
+          纯白
+        </button>
+        <button type="button" class="aa-seg-btn" data-set-theme="dark" role="radio" aria-checked="false">
+          暗黑
+        </button>
+      </div>
+    </div>
+
+    <div>
+      <div class="aa-row-label mb-1.5">正文字体</div>
+      <div class="aa-seg grid-cols-2" role="radiogroup" aria-label="字体">
+        <button type="button" class="aa-seg-btn font-sans is-active" data-set-font="sans" role="radio" aria-checked="true">
+          无衬线
+        </button>
+        <button type="button" class="aa-seg-btn font-serif" data-set-font="serif" role="radio" aria-checked="false">
+          衬线
+        </button>
+      </div>
+    </div>
+
+    <div>
+      <div class="aa-row-label mb-1.5">字号缩放</div>
+      <div class="flex items-center justify-between rounded-[8px] bg-[var(--wash)] p-0.5">
+        <button type="button" id="aa-size-dec" class="aa-step-btn text-xs font-medium" aria-label="减小字号">
+          A−
+        </button>
+        <span id="aa-size-label" class="text-xs font-medium text-[var(--ink)] tabular-nums select-none">
+          100%
+        </span>
+        <button type="button" id="aa-size-inc" class="aa-step-btn text-sm font-medium" aria-label="增大字号">
+          A+
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>

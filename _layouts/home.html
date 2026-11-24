@@ -3,11 +3,8 @@ layout: base
 ---
 
 <div class="home">
-
-  <div class="w-full md:w-9/12">
-    <div class="article -mt-[5px]">
-      {{ content }}
-    </div>
+  <div class="article">
+    {{ content }}
   </div>
 
   {% if site.paginate %}
@@ -17,14 +14,17 @@ layout: base
   {% endif %}
 
   {%- if posts.size > 0 -%}
-  <h2
-    class="mt-16 mb-2 text-sm font-bold text-gray-400 dark:text-gray-500">最近文章</h2>
+  <section class="mt-14 pt-9 border-t border-[var(--hairline)]" aria-labelledby="recent-writings-heading">
+    <div class="flex items-baseline justify-between mb-3">
+      <h2 id="recent-writings-heading" class="text-xs font-medium tracking-[0.12em] text-[var(--muted)]">
+        最近文章
+      </h2>
+      <a href="{{ '/writings/' | relative_url }}" class="text-[13px] text-[var(--muted)] hover:text-[var(--ink)] transition-colors">
+        全部 {{ site.posts.size }} 篇 →
+      </a>
+    </div>
 
-  {% include post-list.html posts=posts limit=3 %}
-
-  <div class="mt-6">
-    <a href="/writings/" class="link text-sm">全部文章 →</a>
-  </div>
+    {% include post-list.html posts=posts limit=6 %}
+  </section>
   {%- endif -%}
-
 </div>

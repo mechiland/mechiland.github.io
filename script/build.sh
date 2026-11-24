@@ -1,2 +1,2 @@
-bundle exec jekyll build
 npm run css:build
+bundle exec jekyll build

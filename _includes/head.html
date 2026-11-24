@@ -5,6 +5,25 @@
   <link rel="icon" href="/assets/images/icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="/assets/images/icon.png" />
   {%- seo -%}
+  <script>
+    (function () {
+      try {
+        var raw = localStorage.getItem('mgs-reader-v2');
+        if (!raw) return;
+        var prefs = JSON.parse(raw);
+        var root = document.documentElement;
+        if (prefs.theme === 'light' || prefs.theme === 'dark') {
+          root.setAttribute('data-theme', prefs.theme);
+        }
+        if (prefs.font === 'sans' || prefs.font === 'serif') {
+          root.setAttribute('data-font', prefs.font);
+        }
+        if (prefs.size && ['sm', 'md', 'lg', 'xl'].indexOf(prefs.size) !== -1) {
+          root.setAttribute('data-size', prefs.size);
+        }
+      } catch (e) {}
+    })();
+  </script>
   <link id="main-stylesheet" rel="stylesheet"
     href="{{ '/assets/css/style.css' | relative_url }}">
   {%- feed_meta -%}

@@ -1,17 +1,38 @@
-{%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
 {%- assign list_limit = include.limit | default: 1000 -%}
-<div class="flex flex-col divide-y divide-gray-100 dark:divide-zinc-800">
-  {%- for post in include.posts limit: list_limit -%}
-  <a class="text-gray-900 dark:text-gray-100 hover:text-gray-900/70 dark:hover:text-gray-100/70 transition-all"
-    href="{{ post.url | relative_url }}">
-    <div class="flex pb-4 md:pb-2 pt-3 flex-col md:flex-row items-start">
-      <div class="flex-auto md:w-9/12 relative top-[2px]">
-        <h2 class="font-bold">{{ post.title | escape }}</h2>
+
+{%- if include.group_by_year -%}
+  {%- assign posts_by_year = include.posts | group_by_exp: "post", "post.date | date: '%Y'" -%}
+  <div class="space-y-10">
+    {%- for year_group in posts_by_year -%}
+    <section aria-label="{{ year_group.name }} 年文章">
+      <div class="flex items-baseline justify-between mb-2 pb-1.5 border-b border-[var(--hairline)]">
+        <h2 class="reading-font text-[15px] font-semibold text-[var(--ink)] tabular-nums">
+          {{ year_group.name }}
+        </h2>
+        <span class="text-xs text-[var(--faint)] tabular-nums">{{ year_group.items.size }} 篇</span>
       </div>
-      <div class="md:w-3/12 md:pl-4 md:shrink-0 text-sm relative top-px text-gray-400 dark:text-gray-500">
-        {{ post.date | date: date_format }}
+      <div class="flex flex-col">
+        {%- for post in year_group.items -%}
+        <a class="post-row" href="{{ post.url | relative_url }}">
+          <span class="post-row-title">{{ post.title | escape }}</span>
+          <time class="post-row-date" datetime="{{ post.date | date_to_xmlschema }}">
+            {{ post.date | date: "%m.%d" }}
+          </time>
+        </a>
+        {%- endfor -%}
       </div>
-    </div>
-  </a>
-  {%- endfor -%}
-</div>
+    </section>
+    {%- endfor -%}
+  </div>
+{%- else -%}
+  <div class="flex flex-col">
+    {%- for post in include.posts limit: list_limit -%}
+    <a class="post-row" href="{{ post.url | relative_url }}">
+      <span class="post-row-title">{{ post.title | escape }}</span>
+      <time class="post-row-date" datetime="{{ post.date | date_to_xmlschema }}">
+        {{ post.date | date: "%Y.%m.%d" }}
+      </time>
+    </a>
+    {%- endfor -%}
+  </div>
+{%- endif -%}

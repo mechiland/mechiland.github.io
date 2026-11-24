@@ -1,25 +1,11 @@
 ---
 permalink: /404.html
 layout: page
+show_title: false
 ---
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
-
-<div class="container">
-  <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+<div class="py-12">
+  <p class="text-xs tracking-[0.16em] uppercase text-[var(--muted)] tabular-nums mb-3">404</p>
+  <h1 class="page-title mb-4">未找到该页面</h1>
+  <p>你访问的链接似乎已移动或不存在。不妨回到<a href="{{ '/' | relative_url }}">首页</a>，或前往<a href="{{ '/writings/' | relative_url }}">文章归档</a>静心阅读。</p>
 </div>
