@@ -1,1 +1,6 @@
-<script defer src="{{ '/assets/js/reader.js' | relative_url }}"></script>
+{%- if site.github.build_revision -%}
+  {%- assign cache_bust = site.github.build_revision | slice: 0, 8 -%}
+{%- else -%}
+  {%- assign cache_bust = site.time | date: '%s' -%}
+{%- endif -%}
+<script defer src="{{ '/assets/js/reader.js' | relative_url }}?v={{ cache_bust }}"></script>
